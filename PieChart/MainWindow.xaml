@@ -1,0 +1,68 @@
+﻿<Window x:Class="PieChart.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PieChart"
+        mc:Ignorable="d"
+        Title="PieChart" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <local:CirclePieChartControl>
+                <local:PieChartItem Value="1" Color="Red"/>
+                <local:PieChartItem Value="1" Color="Green"/>
+                <local:PieChartItem Value="1" Color="Blue"/>
+            </local:CirclePieChartControl>
+            <local:CirclePieChartControl Grid.Row="1">
+                <local:PieChartItem Value="1" Color="Red"/>
+                <local:PieChartItem Value="2" Color="Orange"/>
+                <local:PieChartItem Value="3" Color="Yellow"/>
+                <local:PieChartItem Value="4" Color="Green"/>
+                <local:PieChartItem Value="5" Color="Cyan"/>
+                <local:PieChartItem Value="6" Color="Blue"/>
+                <local:PieChartItem Value="7" Color="Purple"/>
+            </local:CirclePieChartControl>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <local:CirclePieChartControl>
+                <local:PieChartItem Value="1" Color="Red"/>
+                <local:PieChartItem Value="0" Color="Green"/>
+                <local:PieChartItem Value="0" Color="Blue"/>
+            </local:CirclePieChartControl>
+            <local:CirclePieChartControl Grid.Row="1">
+                <local:PieChartItem Value="0" Color="Red"/>
+                <local:PieChartItem Value="1" Color="Green"/>
+                <local:PieChartItem Value="0" Color="Blue"/>
+            </local:CirclePieChartControl>
+            <local:CirclePieChartControl Grid.Row="2">
+                <local:PieChartItem Value="0" Color="Red"/>
+                <local:PieChartItem Value="0" Color="Green"/>
+                <local:PieChartItem Value="1" Color="Blue"/>
+            </local:CirclePieChartControl>
+        </Grid>
+        <local:CirclePieChartControl Height="200" Width="200" Grid.Column="2" Padding="5,20,0,0" ShowRatio="True" EmptyRadius="30">
+            <local:PieChartItem x:Name="mPci" Value="10" Color="Red"/>
+            <local:PieChartItem Value="5" Color="Orange"/>
+            <local:PieChartItem Value="5" Color="Yellow"/>
+            <local:PieChartItem Value="10" Color="Green"/>
+            <local:PieChartItem Value="10" Color="Blue"/>
+            <local:PieChartItem Value="10" Color="Purple"/>
+        </local:CirclePieChartControl>
+        <Button Grid.Column="2" Width="70" Height="30" Margin="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="Reset" Click="Reset_Click"/>
+        <Button Grid.Column="2" Width="70" Height="30" Margin="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="Test" Click="Test_Click"/>
+    </Grid>
+</Window>
